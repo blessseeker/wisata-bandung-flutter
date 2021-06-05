@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:wisata_bandung/tourism_place.dart';
 
 var informationTextStyle = TextStyle(fontFamily: 'Oxygen');
 
 class DetailScreen extends StatelessWidget {
+  final TourismPlace place;
+
+  DetailScreen(@required this.place, {Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,11 +16,11 @@ class DetailScreen extends StatelessWidget {
               child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Image.asset('images/farm-house.jpg'),
+          Image.asset(place.imageAsset),
           Container(
               margin: EdgeInsets.only(top: 16.0),
               child: Text(
-                "Farm House Lembang",
+                place.name,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 30.0,
@@ -33,8 +38,8 @@ class DetailScreen extends StatelessWidget {
                     height: 8.0,
                   ),
                   Text(
-                    'Open Everyday',
-                    style: informationTextStyle,  
+                    place.openDays,
+                    style: informationTextStyle,
                   ),
                 ]),
                 Column(children: <Widget>[
@@ -43,8 +48,8 @@ class DetailScreen extends StatelessWidget {
                     height: 8.0,
                   ),
                   Text(
-                    '09.00 - 20.00',
-                    style: informationTextStyle,  
+                    place.openTime,
+                    style: informationTextStyle,
                   ),
                 ]),
                 Column(children: <Widget>[
@@ -53,8 +58,8 @@ class DetailScreen extends StatelessWidget {
                     height: 8.0,
                   ),
                   Text(
-                    'Rp 25.000',
-                    style: informationTextStyle,  
+                    place.ticketPrice,
+                    style: informationTextStyle,
                   ),
                 ]),
               ],
