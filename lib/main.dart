@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wisata_bandung/detail_screen.dart';
 import 'package:wisata_bandung/main_screen.dart';
+import 'package:wisata_bandung/tourism_place.dart';
 
 void main() {
   runApp(MyApp());
